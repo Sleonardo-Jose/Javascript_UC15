@@ -6,9 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <button onclick="interagir()">Clique aqui</button>
     <script>
     // Exibe a caixa de confirmação
-    let resposta = confirm("Sopa n~eo é janta !")
+    let resposta = confirm("Sopa não é janta !")
 
     // Verifica se o usuario clicou em "OK" ou "Cancelar"
     if(resposta){
@@ -16,6 +18,17 @@
         alert("Issoooo Mesmo")
     }else{
         alert("Sopa não é janta !! Aceite !!")
+    }
+
+    function interagir(){
+        // Exibir a caixa de confirmaçâo
+        const resposta = confirm("Voce deseja ver uma mensagem ?")
+
+        if(resposta){
+            document.write("Voce é otario !")
+        }else{
+            document.write("BK é melhor que MC")
+        }
     }
     </script>     
 </body>
