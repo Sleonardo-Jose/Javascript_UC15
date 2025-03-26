@@ -7,5 +7,26 @@
 </head>
 <body>
     <h1>Seu Perfil</h1>
+
+    <!-- Elementos onde as informaçoes serão exibidas -->
+     <div id="nome">"nome"</div>
+     <div id="idade">"idade"</div>
+     <div id="cidade">"cidade"</div>
+     <div id="jogoFavorito">"jogoFavorito"</div>
+
+    <script>
+        
+        let nome = prompt("Qual é o seu nome?");
+        let idade = prompt("Qual é a sua idade?");
+        let cidade = prompt("Qual é a sua cidade?");
+        let jogoFavorito = prompt("Qual é o seu jogo favorito?");
+
+        
+        document.getElementById("nome").innerHTML = `Nome: ${nome}`;
+        document.getElementById("idade").innerHTML = `Idade: ${idade}`;
+        document.getElementById("cidade").innerHTML = `Cidade: ${cidade}`;
+        document.getElementById("jogoFavorito").innerHTML = `Jogo Favorito: ${jogoFavorito}`;
+    
+     </script>
 </body>
 </html>
