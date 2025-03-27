@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,7 @@
      <div id="cidade">"cidade"</div>
      <div id="jogoFavorito">"jogoFavorito"</div>
 
+     
     <script>
         
         let nome = prompt("Qual é o seu nome?");
@@ -21,7 +22,11 @@
         let cidade = prompt("Qual é a sua cidade?");
         let jogoFavorito = prompt("Qual é o seu jogo favorito?");
 
-        
+        if(isNan(idade)){
+            alert("Digite um numero")
+            idade = "Digite um numero"
+        }
+
         document.getElementById("nome").innerHTML = `Nome: ${nome}`;
         document.getElementById("idade").innerHTML = `Idade: ${idade}`;
         document.getElementById("cidade").innerHTML = `Cidade: ${cidade}`;
