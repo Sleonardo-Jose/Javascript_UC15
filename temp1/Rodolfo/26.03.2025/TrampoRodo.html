@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+</head>
+<body>
+
+    <h1>Calculadora Simples</h1>
+
+    <div id="resultado"></div>
+
+    <script>
+        // Função para validar se a entrada é um número
+        function isNumero(val) {
+            return !isNaN(val) && val !== '';
+        }
+
+        // Pedir os números ao usuário
+        let num1 = prompt("Digite o primeiro número:");
+        let num2 = prompt("Digite o segundo número:");
+
+        // Validar se os dois números são válidos
+        if (!isNumero(num1) || !isNumero(num2)) {
+            alert("Por favor, digite números válidos.");
+        } else {
+            // Converter os valores para números
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            // Pedir a operação desejada
+            let operacao = prompt("Qual operação deseja realizar? (+, -, *, /)");
+
+            let resultado;
+
+            // Verificar a operação escolhida e realizar o cálculo
+            switch (operacao) {
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        alert("Não é possível dividir por zero!");
+                        resultado = "Erro";
+                    } else {
+                        resultado = num1 / num2;
+                    }
+                    break;
+                default:
+                    alert("Operação inválida. Use +, -, * ou /.");
+                    resultado = "Erro";
+                    break;
+            }
+
+            // Exibir o resultado no alert
+            alert("O resultado da operação é: " + resultado);
+
+            // Exibir o resultado na página HTML
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+    </script>
+
+</body>
+</html>
