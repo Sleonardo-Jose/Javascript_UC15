@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulação e Informações de Medicamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="chat-box" id="chat-box">
+            <div class="message bot-message">                
+              <h3>Digite o nome de um medicamento:</h3>
+            </div>
+        </div>
+        <input type="text" id="user-input" placeholder="Digite o nome do medicamento...">
+        <br/>
+        <button onclick="getFormulation()">Obter Informações</button>  
+        <br/>    
+        <button onclick="clearChat()">Limpar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
