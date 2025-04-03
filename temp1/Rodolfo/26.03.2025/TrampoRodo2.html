@@ -14,20 +14,17 @@
     <p>Resultado em Fahrenheit: <span id="resultado"></span></p>
 
     <script>
-        function converterTemperatura() {
-            // Obtém o valor digitado pelo usuário
+        function converterTemperatura() {          
             let celsius = document.getElementById('celsius').value;
 
-            // Valida se o valor é um número
+            
             if (isNaN(celsius) || celsius === "") {
                 alert("Por favor, insira um número válido para a temperatura em Celsius.");
                 return;
             }
-
-            // Converte de Celsius para Fahrenheit
+            
             let fahrenheit = (parseFloat(celsius) * 9/5) + 32;
-
-            // Exibe o resultado em Fahrenheit
+            
             alert("Temperatura em Fahrenheit: " + fahrenheit.toFixed(2));
             document.getElementById('resultado').textContent = fahrenheit.toFixed(2);
         }

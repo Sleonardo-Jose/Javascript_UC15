@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquina de Escrever</title>
+    <style>
+        /* Estilos CSS para a pagina*/
+        body{
+            display: flex; /*Flexbox para layout*/
+            justify-content: center; /*Centralizar vertical*/
+            align-items: center; /*Centralizar vertical*/
+            min-height: 100vh;
+            margin: 0; /*Remove margens padrão*/
+            background-color: black; /*Cor do site*/
+            font-family: 'Courier New'; /*Fonte do site*/
+            color: #00ff00;/*Cor do texo*/
+        }
+        #MaquinaEscrever-text{
+            font-size: 24px;
+            /*Tamanho Texto*/
+            border-right: 2px solid #00ff00;
+            /*Cursos verde á direita*/
+            white-space: nowrap;
+            /*Mantém texto que ultrapassar*/
+            animation: piscarCursos 0.7s infinite;
+            /*Chama animação CSS com 7 segundos*/
+        }
+        @keyframes piscarCursor {
+            from{
+                border-right-color: transparent;
+            }
+            to{
+                border-right: #00ff00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="piscarCursor"></div>
+    <script>
+        // Configuraçao do efeito 
+        const texto = "Faz o L, Seu vagabundo, meliante"
+        const elemento = document.getElementById("piscarCursor")
+        const velocidade = 350
+
+        // Funçao principal
+        function escreverTexto(texto, elemento, velocidade){
+            //contador para rastrear a posição do texto 
+            let contador = 0
+            // Desativar a animação do cursos
+            elemento.style.animation="none"
+        
+        function digitar(){
+            // Verifica se ainda há caracteres para digitar
+            if(contador < texto.length){
+                //Adiciona o caractere atual ao elemento 
+                elemento.textContent += texto[contador]
+                // Avança para o proximo caractere
+                contador++
+                //Agenda a proxima digitação apos o tempo
+                setTimeout(digitar, velocidade)
+            }else{
+                // Quando o texto estiver completo, remove cursor 
+                elemento.style.borderRight = "none"
+            }
+        }
+        //Chama o processo para o inicio da execução
+        digitar()
+    }
+    //Inicializa
+    //Aguarda 1 segundo 1000ms
+    setTimeout(()=>escreverTexto(texto, elemento, velocidade),1000)
+    </script>
+</body>
+</html>

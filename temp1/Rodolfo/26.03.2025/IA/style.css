@@ -1,0 +1,55 @@
+/* style.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: black;
+    font-family: 'Courier New';
+    color: #00ff00;
+    flex-direction: column;
+    text-align: center;
+}
+
+#MaquinaEscrever-text {
+    font-size: 24px;
+    border-right: 2px solid #00ff00;
+    white-space: nowrap;
+    animation: piscarCursor 0.7s infinite;
+
+}
+
+@keyframes piscarCursor {
+    from {
+        border-right-color: transparent;
+    }
+
+    to {
+        border-right: #00ff00;
+    }
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #00ff00;
+    background-color: black;
+    color: #00ff00;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #00ff00;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #00cc00;
+}
