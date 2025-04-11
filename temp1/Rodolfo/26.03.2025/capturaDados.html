@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturar Dados</title>
+</head>
+<body>
+    <h1>Dados do sistema</h1>
+    <button onclick="mostrarInfoSistema()">
+        Clique para ver as infomações do Sistema
+    </button>
+    <script>
+        //Função Mostrar Informaçoes sistemas
+        function mostrarInfoSistema(){
+            const navegador = navigator.userAgent
+            const sistemaOperacional = navigator.platform
+            const idioma = navigator.language
+
+            //Detecta Sistema Operacional
+            let sistema = "Desconhecido"
+            // Verifica presença de strings especificas no userAgent
+            if(navigator.userAgent.indexOf('Win') != -1) sistema = "Windows"
+            if(navigator.userAgent.indexOf('Mac') != -1) sistema = "MacOs"
+            if(navigator.userAgent.indexOf('Linux') != -1) sistema = "Linux"
+            if(navigator.userAgent.indexOf('Android') != -1) sistema = "Android"
+            if(navigator.userAgent.indexOf('IOS') != -1) sistema = "IOS"
+
+            // Detecta Navegator Sistema
+            let navegadorNome = "Desconhecido"
+            if(navigator.userAgent.indexOf('Chrome') != -1) sistema = "Chrome"
+            if(navigator.userAgent.indexOf('Firefox') != -1) sistema = "Firefox"
+            if(navigator.userAgent.indexOf('Safari') != -1) sistema = "Safari"
+            if(navigator.userAgent.indexOf('Edge') != -1) sistema = "Edge"     
+            
+            // Criando mensagem Final
+
+            const mensagem =`Informações do sistema:
+                            Sistema Operacional ${sistema}.
+                            Navegador: ${navegadorNome},
+                            Idioma: ${idioma}
+                            `
+
+            document.write(mensagem)              
+                                
+        }
+    </script>
+    
+</body>
+</html>
