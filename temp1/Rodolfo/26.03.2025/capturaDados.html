@@ -28,19 +28,34 @@
 
             // Detecta Navegator Sistema
             let navegadorNome = "Desconhecido"
-            if(navigator.userAgent.indexOf('Chrome') != -1) sistema = "Chrome"
-            if(navigator.userAgent.indexOf('Firefox') != -1) sistema = "Firefox"
-            if(navigator.userAgent.indexOf('Safari') != -1) sistema = "Safari"
-            if(navigator.userAgent.indexOf('Edge') != -1) sistema = "Edge"     
+            if(navigator.userAgent.indexOf('Chrome') != -1 &&
+            navegador.indexOf("Edg") == -1 &&
+            navegador.indexOf("OPR") == -1) 
+            {
+                navegadorNome = "Google Chrome"
+            }
+            else if (navegador.indexOf("Edg") != -1) {
+                navegadorNome="Edge"
+            }
             
-            // Criando mensagem Final
-
-            const mensagem =`Informações do sistema:
-                            Sistema Operacional ${sistema}.
-                            Navegador: ${navegadorNome},
-                            Idioma: ${idioma}
-                            `
-
+            else if (navegador.indexOf("OPR") != -1) {
+                navegadorNome="Opera"
+            }
+            else if(navegador.indexOf("Firefox") != -1){
+                navegadorNome = "Mozilla Firefox"
+            }
+            else if (navegador.indexOf("Safari") != -1){
+                navegadorNome = "Apple Safari"
+            } 
+            
+            const mensagem = `Informações do Sistema
+                Sistema operacional: ${sistema},
+                <br>
+                Navegador: ${navegadorNome},
+                <br>
+                Idioma: ${idioma},
+                `          
+            
             document.write(mensagem)              
                                 
         }
