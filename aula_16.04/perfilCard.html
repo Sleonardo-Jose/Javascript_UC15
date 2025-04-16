@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Card</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /*RESET CSS DO NAVEGADOR*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+
+            background: linear-gradient(45deg, #ff6b6b, #4ecd4e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+
+        }
+        .contaneir{
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px (0,0,0,0.1);
+            text-align: center;
+        }
+        .foto-perfil{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #4ecd4e;
+            object-fit: cover;
+        }
+        h1{
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        p{
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://placehold.co/120x120?text=Foto+Perfil" class="foto-p">
+        <h1>Seu Nome Aqui</h1>
+        <p>Desenvolvedor Web | Professor de Programação</p>
+        <div id="links">
+            <a href="#" class="botao-link">Portfólio</a>
+            <a href="#" class="botao-link">Agenda Consultorio</a>
+            <a href="#" class="botao-link">Blog</a>
+
+            <button id="botao-mensagem" class="botao-link">Enviar Mensagem</button>
+
+            <form id="formContato" onSubmit="#">
+                <textarea id="formContato" class="campo-mensagem" required>
+             </textarea>
+             <button type="submit" class="botao-enviar">Enviar via Whatss</button>
+            </form>
+        </div>
+
+        <div class="redes-sociais">
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-github"></i></a>
+        </div>
+    </div>
+</body>
+</html>
