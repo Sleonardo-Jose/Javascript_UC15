@@ -116,10 +116,10 @@
             <a href="#" class="botao-link">Agenda Consultorio</a>
             <a href="#" class="botao-link">Blog</a>
 
-            <button id="botao-mensagem" class="botao-link">Enviar Mensagem</button>
+            <button id="botao-mensagem" class="botao-link" onclick="toggleForm()">Enviar Mensagem</button>
 
-            <form id="formContato" onSubmit="#">
-                <textarea id="formContato" class="campo-mensagem" required>
+            <form id="formContato" onSubmit="enviarMensagem(event)">
+                <textarea id="mensagem" class="campo-mensagem" required>
              </textarea>
                 <button type="submit" class="botao-enviar">Enviar via Whatss</button>
             </form>
@@ -137,19 +137,19 @@
         function toggleForm() {
             let form = document.getElementById("formContato");
             form.style.display = form.style.display === 'block' ? 'none' : 'block';
-            if (form.style.display === "block"){
+            if (form.style.display === "block") {
                 setTimeout(() => document.querySelector('.campo-mensagem').focus(), 50)
             }
         }
 
-        function enviarMensagem(e){
+        function enviarMensagem(e) {
             e.preventDefault()
             let msg = document.querySelector('.campo-mensagem').value.trim()
 
             window.open('https://wa.me/${numeroWhatsapp}?text=${msg}')
 
             document.getElementById('formContato').reset()
-            document.getElementById('formContato').style.display='none'
+            document.getElementById('formContato').style.display = 'none'
         }
     </script>
 </body>
